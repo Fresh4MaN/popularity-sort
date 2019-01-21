@@ -25,7 +25,7 @@ function countPopularity() {
         #Высчитываем B
         $B = 0;
         $ids = array($arFields['ID']);
-        //Получаем ID торговых предложений товара
+        //Получаем ID торговых предложений товара (если есть)
         if (is_array($arSKUInfo)) {
             $rsOffers = CIBlockElement::GetList(array(),array('IBLOCK_ID' => $arSKUInfo['IBLOCK_ID'], 'PROPERTY_'.$arSKUInfo['SKU_PROPERTY_ID'] => $arFields['ID']));
             while ($arOffer = $rsOffers->GetNext()) {
